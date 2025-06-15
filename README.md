@@ -27,3 +27,20 @@ This Spotify API data contains information about musics, artists, albums and son
 ## Architecture Diagram:
 ![Architecture Diagram](https://github.com/Logan0818/spotify-end-to-end-data-engineering-project/blob/main/spotify%20architecture%20aws.png)
 
+## High Level Steps and Notes
+### Extract
+1. Register an App in Spotify API site, get client id and cliend secret
+2. Use python library **spotipy** to connect to the API (develop your python codes in Jupyter notebook first)
+3. Spotify has locked access to most playlist, but we can use this one https://open.spotify.com/playlist/3cEYpjA9oz9GiPac4AsH4n
+4. Deploy our code on Lambda (create function, create environment variables) and test
+5. Lambda does not support external library, need to create a lambda layer
+6. Import boto3 package to interact with S3, load raw data (json file) into raw_data/to_process folder
+
+### Transform and Load
+1. Study the API response (json file structure) and use for loop to get what we want from it (information about albums, artists, songs)
+2. Pull the file in raw_data S3 folder and apply transformation logics, convert data to python dataframe.
+3. Generate three csv files and put the files back to S3 bucket into transformed_data folder.
+4. Copy raw data from raw_data/to_process folder to raw_data/processed folder, then delete raw file in raw_data/to_process folder.
+
+### Reference
+https://www.linkedin.com/in/darshil-parmar/
