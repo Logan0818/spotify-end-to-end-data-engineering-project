@@ -42,5 +42,10 @@ This Spotify API data contains information about musics, artists, albums and son
 3. Generate three csv files and put the files back to S3 bucket into transformed_data folder.
 4. Copy raw data from raw_data/to_process folder to raw_data/processed folder, then delete raw file in raw_data/to_process folder.
 
+### AWS Glue and Athena
+1. In AWS Glue/Data Catalog, create a crawler for each table (albums, artists, and songs) to generate tables in Athena.
+2. Make sure the schema is correct for each table.
+3. Now you can use SQL query to analyze your data in Athena database.
+
 ### Reference
 https://www.linkedin.com/in/darshil-parmar/
