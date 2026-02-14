@@ -48,5 +48,5 @@ This Spotify API data contains information about musics, artists, albums and son
 3. Now you can use SQL query to analyze your data in Athena database.
 
 ### Reference
-https://www.linkedin.com/in/darshil-parmar/
-check his Data Engineer courses
+https://www.linkedin.com/in/darshil-parmar/ <br>
+check his Data Engineer courses, this is really helpful.
